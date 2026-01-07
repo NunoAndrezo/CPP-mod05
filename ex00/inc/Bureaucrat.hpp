@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 10:23:20 by nuno              #+#    #+#             */
-/*   Updated: 2026/01/07 10:57:52 by nuno             ###   ########.fr       */
+/*   Updated: 2026/01/07 15:03:08 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-class Bureucrat
+class Bureaucrat
 {
 	private:
 		const std::string	name;
@@ -23,11 +23,11 @@ class Bureucrat
 	protected:
 		
 	public:
-		Bureucrat();
-		Bureucrat(const std::string name);
-		Bureucrat(const Bureucrat &src);
-		Bureucrat const &operator=(const Bureucrat &src);
-		~Bureucrat();
+		Bureaucrat();
+		Bureaucrat(const std::string name, int grade);
+		Bureaucrat(const Bureaucrat &src);
+		Bureaucrat& operator=(const Bureaucrat &src);
+		~Bureaucrat();
 
 		const std::string	getName();
 		int					getGrade();
