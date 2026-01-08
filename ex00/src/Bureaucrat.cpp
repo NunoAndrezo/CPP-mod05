@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:57:23 by nuno              #+#    #+#             */
-/*   Updated: 2026/01/07 15:19:30 by nuno             ###   ########.fr       */
+/*   Updated: 2026/01/08 14:47:13 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,20 @@ Bureaucrat::Bureaucrat() : name("Mr. Bureaucrat") , grade(75)
 
 Bureaucrat::Bureaucrat(std::string name, int grade)
 {
+	try
+	{
+		if (grade < 1)
+			throw -1;
+		if (grade > 150)
+			throw 1;
+	}
+	catch (outOfRange)
+	{
+		if (outOfRange == -1)
+			GradeTooHighException(name, grade);
+		else
+			GradeTooLowException(name, grade);
+	}
 	(std::string)this->name = name;
 	this->grade = grade;
 	std::cout << "[Bureaucrat] -> Default Constructor with arguments" << std::endl;
@@ -47,3 +61,23 @@ Bureaucrat::~Bureaucrat() { std::cout << "[Bureaucrat] -> Default Destructor" <<
 const std::string Bureaucrat::getName() { return (this->name); }
 
 int Bureaucrat::getGrade() { return (this->grade); }
+
+void	GradeTooHighException()
+{
+	
+}
+
+void	GradeTooLowException()
+{
+
+}
+
+void	incrementGrade()
+{
+
+}
+
+void	decrementGrade()
+{
+
+}
