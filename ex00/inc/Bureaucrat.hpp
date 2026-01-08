@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 10:23:20 by nuno              #+#    #+#             */
-/*   Updated: 2026/01/08 12:27:08 by nuno             ###   ########.fr       */
+/*   Updated: 2026/01/08 16:36:48 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include <stdexcept>
 
 class Bureaucrat
 {
