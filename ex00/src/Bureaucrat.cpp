@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:57:23 by nuno              #+#    #+#             */
-/*   Updated: 2026/01/12 19:12:13 by nuno             ###   ########.fr       */
+/*   Updated: 2026/01/12 23:12:03 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
 	}
 	std::cout << "[Bureaucrat] -> Copy Assignment Operator" << std::endl;
 	return (*this);
+}
+
+Bureaucrat Bureaucrat::operator<<(const Bureaucrat src)
+{
+	std::cout << this->name << ", bureaucrat grade" << this->grade
 }
 
 Bureaucrat::~Bureaucrat() { std::cout << "[Bureaucrat] -> Default Destructor" << std::endl; }
