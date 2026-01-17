@@ -1,11 +1,5 @@
-Name: Bureaucrat
-Type: Makefile
-Description: Makefile for Bureaucrat project
-Author: Nuno Andrezo
-Date: 07-01-2026
-
 #Name of the executable
-NAME = bureaucrat
+NAME = Bureaucrat
 
 #Compiler to use
 CC = c++
@@ -14,9 +8,9 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 #Directories for source, object and include files
-OBJ_DIR	=	obj/
 SRC_DIR	=	src/
 INC_DIR	=	inc/
+OBJ_DIR	=	obj/
 
 #Color codes for terminal output
 RESET		=	\033[0m
@@ -29,6 +23,7 @@ CUT			=	\033[K
 
 #source and object files
 SRC_FILES = main.cpp Bureaucrat.cpp
+
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 
 #full paths for source and object files
@@ -37,11 +32,14 @@ OBJ = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
 #Rule for building the executable
 all: $(NAME)
+
+#Compile the executable
+$(NAME): $(OBJ)
 	@echo "$(YELLOW)Compiling [$(NAME)]...$(RESET)"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(GREEN)Finished [$(NAME)]$(RESET)"
 
-#Rule for building object files
+#Building object files
 $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
 	@mkdir -p $(OBJ_DIR)
 	@echo "$(YELLOW)Compiling [$@]...$(RESET)"
