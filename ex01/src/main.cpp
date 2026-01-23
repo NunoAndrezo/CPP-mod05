@@ -6,11 +6,12 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 11:45:36 by nuno              #+#    #+#             */
-/*   Updated: 2026/01/19 19:27:05 by nuno             ###   ########.fr       */
+/*   Updated: 2026/01/19 19:30:49 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Bureaucrat.hpp"
+#include "../inc/Form.hpp"
 
 int	main(void)
 {
