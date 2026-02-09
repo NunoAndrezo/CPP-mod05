@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:30:54 by nuno              #+#    #+#             */
-/*   Updated: 2026/01/19 19:42:40 by nuno             ###   ########.fr       */
+/*   Updated: 2026/02/09 13:32:57 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <exception>
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -23,19 +26,29 @@ class Form
 		bool				is_signed;
 		const int			grade_sign;
 		const int			grade_execute;
-	protected:
+
 	public:
+		//constructors
 		Form();
-		Form(const std::string name, const int grade_sign, const int grade_execute);
+		Form(const int grade_sign, const int grade_execute);
 		Form(const Form &src);
-		Form &operator=(const Form &src);
+		
+		//destructor
 		~Form();
 
-		const std::string getName();
-		bool getIsSigned();
-		const int getGrade_Sign();
-		const int getGrade_Execute();
+		//operators
+		Form &operator=(const Form &src);
+		
+		//public methods
+		void beSigned(Bureaucrat &signer);
 
+		//getters
+		const std::string getName() const;
+		bool getIsSigned() const;
+		int getGrade_Sign() const;
+		int getGrade_Execute() const;
+
+		//Nested exception classes
 		class GradeTooHighException : public std::exception
 		{
 			virtual const char *what() const throw();
@@ -47,6 +60,7 @@ class Form
 		};
 };
 
-std::ostream operator<<(std::ostream &out, const Form &src);
+//Overload of the insertion operator for Form
+std::ostream &operator<<(std::ostream &out, Form &src);
 
 #endif

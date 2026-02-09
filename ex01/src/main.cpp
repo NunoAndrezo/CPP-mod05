@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 11:45:36 by nuno              #+#    #+#             */
-/*   Updated: 2026/01/19 19:30:49 by nuno             ###   ########.fr       */
+/*   Updated: 2026/02/09 14:05:15 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,12 @@
 int	main(void)
 {
 	try {
-	Bureaucrat noData;
-	//Bureaucrat tooHighGrade("High", 0); // add for error
-	//Bureaucrat tooLowGrade("Low", 151); // add for error
-
-	Bureaucrat fine("Inspector Gadget", 1);
-
-	std::cout << "fine in the beginning: " <<fine << std::endl;
-
-	//fine.incrementGrade(); // add for error
+	Form form_A(79, 150);
+	Bureaucrat fine("Inspector Gadget", 80);
+	std::cout << "Name: " << fine.getName() << ", grade: " << fine.getGrade() << std::endl;
 	fine.decrementGrade();
 	std::cout << "Name: " << fine.getName() << ", grade after decrementing: " << fine.getGrade() << std::endl;
-
-	std::cout << "Decrementing once more: \n";
-	fine.decrementGrade();
-	
-	std::cout <<fine;
+	fine.signForm(form_A);
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;

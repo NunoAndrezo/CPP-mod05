@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:57:23 by nuno              #+#    #+#             */
-/*   Updated: 2026/01/17 14:34:53 by nuno             ###   ########.fr       */
+/*   Updated: 2026/02/09 13:55:25 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,11 @@ void	Bureaucrat::decrementGrade()
 		throw GradeTooLowException();
 	else if (this->grade < 1)
 		throw GradeTooHighException();
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	form.beSigned(*this);
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()
