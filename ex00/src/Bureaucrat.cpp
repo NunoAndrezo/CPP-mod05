@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:57:23 by nuno              #+#    #+#             */
-/*   Updated: 2026/01/17 14:34:53 by nuno             ###   ########.fr       */
+/*   Updated: 2026/03/17 16:32:39 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 
 Bureaucrat::Bureaucrat(Bureaucrat const &src)
 {
-	(std::string)this->name = src.name;
 	if (src.grade < 1)
 		throw GradeTooHighException();
 	else if (src.grade > 150)
 		throw GradeTooHighException();
+	(std::string)this->name = src.name;
 	this->grade = src.grade;
 	std::cout << "[Bureaucrat] -> Copy Constructor" << std::endl;
 }
@@ -43,22 +43,31 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src)
 {
 	if (this != &src)
 	{
-		(std::string)this->name = src.name;
 		if (src.grade < 1)
 			throw GradeTooHighException();
 		else if (src.grade > 150)
 			throw GradeTooLowException();
+		(std::string)this->name = src.name;
 		this->grade = src.grade;
 	}
 	std::cout << "[Bureaucrat] -> Copy Assignment Operator" << std::endl;
 	return (*this);
 }
 
-Bureaucrat::~Bureaucrat() { std::cout << "[Bureaucrat] -> Default Destructor" << std::endl; }
+Bureaucrat::~Bureaucrat()
+{
+	std::cout << "[Bureaucrat] -> Default Destructor" << std::endl;
+}
 
-const std::string Bureaucrat::getName() const { return (this->name); }
+const std::string Bureaucrat::getName() const
+{
+	return (this->name);
+}
 
-int Bureaucrat::getGrade() const { return (this->grade); }
+int Bureaucrat::getGrade() const
+{
+	return (this->grade);
+}
 
 void	Bureaucrat::incrementGrade()
 {
