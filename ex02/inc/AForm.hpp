@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:30:54 by nuno              #+#    #+#             */
-/*   Updated: 2026/03/19 12:46:12 by nuno             ###   ########.fr       */
+/*   Updated: 2026/03/19 12:52:24 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <iostream>
 #include <exception>
@@ -19,7 +19,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 		const std::string	name;
@@ -29,15 +29,15 @@ class Form
 
 	public:
 		//constructors
-		Form();
-		Form(const int grade_sign, const int grade_execute);
-		Form(const Form &src);
+		AForm();
+		AForm(const int grade_sign, const int grade_execute);
+		AForm(const AForm &src);
 		
 		//destructor
-		~Form();
+		~AForm();
 
 		//operators overloads
-		Form &operator=(const Form &src);
+		AForm &operator=(const AForm &src);
 		
 		//public methods
 		void beSigned(Bureaucrat &signer);
@@ -60,7 +60,7 @@ class Form
 		};
 };
 
-//Overload of the insertion operator for Form
-std::ostream &operator<<(std::ostream &out, Form &src);
+//Overload of the insertion operator for AForm
+std::ostream &operator<<(std::ostream &out, AForm &src);
 
 #endif
