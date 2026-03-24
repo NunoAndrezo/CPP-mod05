@@ -62,7 +62,4 @@ class AForm
 		};
 };
 
-//Overload of the insertion operator for AForm
-std::ostream &operator<<(std::ostream &out, AForm &src);
-
 #endif

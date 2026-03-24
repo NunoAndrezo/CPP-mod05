@@ -60,7 +60,4 @@ class Form
 		};
 };
 
-//Overload of the insertion operator for Form
-std::ostream &operator<<(std::ostream &out, Form &src);
-
 #endif

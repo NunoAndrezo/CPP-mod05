@@ -58,16 +58,25 @@ AForm::~AForm()
 	std::cout << "AForm Destructor called" << std::endl;
 }
 
-const std::string AForm::getName() const { return (this->name); }
+const std::string AForm::getName() const
+{
+	return (this->name);
+}
 
-bool AForm::getIsSigned() const { return (this->is_signed); }
+bool AForm::getIsSigned() const
+{
+	return (this->is_signed);
+}
 
 int AForm::getGrade_Sign() const
 {
 	return (this->grade_sign);
 }
 
-int AForm::getGrade_Execute() const { return (this->grade_execute); }
+int AForm::getGrade_Execute() const
+{
+	return (this->grade_execute);
+}
 
 void AForm::beSigned(Bureaucrat &signer)
 {
@@ -97,14 +106,4 @@ const char *AForm::GradeTooHighException::what() const throw()
 const char *AForm::GradeTooLowException::what() const throw()
 {
 	return ("AForm: Grade is too low!");
-}
-
-std::ostream &operator<<(std::ostream &out, AForm &src)
-{
-	out << "AForm: " << src.getName() <<
-	":\n\tsign-grade:\t" << src.getGrade_Sign() <<
-	"\n\texec-grade:\t" << src.getGrade_Execute() <<
-	"\n\tis signed:\t" << src.getIsSigned() <<
-	std::endl;
-	return (out);
 }

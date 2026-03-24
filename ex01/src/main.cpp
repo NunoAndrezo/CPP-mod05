@@ -15,15 +15,17 @@
 
 int	main(void)
 {
-	try {
-	Form form_A(79, 150);
-	Bureaucrat fine("Inspector Gadget", 80);
-	std::cout << "Name: " << fine.getName() << ", grade: " << fine.getGrade() << std::endl;
-	fine.decrementGrade();
-	std::cout << "Name: " << fine.getName() << ", grade after decrementing: " << fine.getGrade() << std::endl;
-	fine.signForm(form_A);
+	try
+	{
+		Form form_A(79, 150);
+		Bureaucrat fine("Inspector Gadget", 80);
+		std::cout << "Name: " << fine.getName() << ", grade: " << fine.getGrade() << std::endl;
+		fine.decrementGrade();
+		std::cout << "Name: " << fine.getName() << ", grade after decrementing: " << fine.getGrade() << std::endl;
+		fine.signForm(form_A);
 	}
-	catch (std::exception &e) {
+	catch (std::exception &e)
+	{
 		std::cout << e.what() << std::endl;
 	}
 	return (0);
