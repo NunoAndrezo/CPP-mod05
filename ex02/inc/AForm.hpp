@@ -32,15 +32,17 @@ class AForm
 		AForm();
 		AForm(const int grade_sign, const int grade_execute);
 		AForm(const AForm &src);
+		AForm(const std::string name, const int grade_sign, const int grade_execute);
 		
 		//destructor
-		~AForm();
+		virtual ~AForm();
 
 		//operators overloads
 		AForm &operator=(const AForm &src);
 		
 		//public methods
 		void beSigned(Bureaucrat &signer);
+		virtual void execute(Bureaucrat const &executor) const = 0;
 
 		//getters
 		const std::string getName() const;
