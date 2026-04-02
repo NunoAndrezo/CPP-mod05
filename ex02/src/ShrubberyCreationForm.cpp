@@ -32,7 +32,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-const std::string ShrubberyCreationForm::getTarget() const
+std::string ShrubberyCreationForm::getTarget() const
 {
 	return (this->_target);
 }

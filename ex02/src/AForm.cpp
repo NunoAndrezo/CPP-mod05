@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 11:24:18 by nuno              #+#    #+#             */
-/*   Updated: 2026/04/02 14:17:56 by nuno             ###   ########.fr       */
+/*   Updated: 2026/04/02 15:36:30 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void AForm::beSigned(Bureaucrat &signer)
 	{
 		if (this->is_signed == false)
 		{
-			std::cout << "This AForm is now signed and was signed by: " << signer.getName() << std::endl;
+			std::cout << getName() << ": is now signed and was signed by: " << signer.getName() << std::endl;
 			this->is_signed = true;
 		}
 		else

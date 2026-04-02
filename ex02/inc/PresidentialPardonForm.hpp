@@ -1,12 +1,12 @@
 #pragma once
 
 #include "AForm.hpp"
-#include "Bureaucrat.hpp"
+#include <iostream>
 
 class PresidentialPardonForm : public AForm
 {
 	private:
-		const std::string _target;
+		std::string _target;
 	public:
 		PresidentialPardonForm(void);
 		PresidentialPardonForm(const std::string target);
@@ -15,9 +15,7 @@ class PresidentialPardonForm : public AForm
 
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &src);
 
-		void execute(Bureaucrat const &executor) const;
-		const std::string getTarget() const;
+		std::string getTarget() const;
+		int execute(Bureaucrat const &executor) const;
 
 };
-
-std::ostream &operator<<(std::ostream &out, const PresidentialPardonForm &src);
