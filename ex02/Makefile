@@ -63,6 +63,12 @@ fclean: clean
 	echo "$(BLUE)Deleting $(NAME)...$(RESET)"; else \
 	echo "No Executable to remove."; \
 	fi;
+#used to remove all *_shrubbery files created by the ShrubberyCreationForm
+	@if ls *_shrubbery 2>/dev/null | grep -q .; then \
+	rm -f *_shrubbery; \
+	echo "$(BLUE)Deleting all *_shrubbery files...$(RESET)"; else \
+	echo "No *_shrubbery files to remove."; \
+	fi;
 
 #re rule
 re: fclean all
