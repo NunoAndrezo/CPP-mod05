@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 11:45:36 by nuno              #+#    #+#             */
-/*   Updated: 2026/03/31 18:35:10 by nuno             ###   ########.fr       */
+/*   Updated: 2026/04/02 14:22:04 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(void)
 
 		bob.signForm(ShrubForm);
 		std::cout << ShrubForm.getName() << " is signed: " << ShrubForm.getIsSigned() << std::endl;
-		ShrubForm.execute(bob);
+		bob.executeForm(ShrubForm);
 	}
 	catch (std::exception &e)
 	{

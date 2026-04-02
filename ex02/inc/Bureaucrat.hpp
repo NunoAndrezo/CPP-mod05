@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 10:23:20 by nuno              #+#    #+#             */
-/*   Updated: 2026/03/31 18:17:51 by nuno             ###   ########.fr       */
+/*   Updated: 2026/04/02 14:20:13 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ class Bureaucrat
 		void				incrementGrade();
 		void				decrementGrade();
 		void				signForm(AForm &form);
+		void				executeForm(AForm const &form) const;
 
 		// Nested exception classes
 		class GradeTooHighException : public std::exception

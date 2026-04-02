@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:57:23 by nuno              #+#    #+#             */
-/*   Updated: 2026/03/31 18:31:06 by nuno             ###   ########.fr       */
+/*   Updated: 2026/04/02 15:18:57 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,12 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat const &obj)
 {
 	out << obj.getName() << " [Bureaucrat] Grade: " << obj.getGrade() << "." << std::endl;
 	return out;
+}
+
+void Bureaucrat::executeForm(AForm const &form) const
+{
+	if (form.execute(*this) == 0)
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	else
+		std::cerr << this->getName() << " couldn't execute " << form.getName() << " because of an error during execution." << std::endl;
 }

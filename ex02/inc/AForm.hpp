@@ -44,7 +44,7 @@ class AForm
 		
 		//public methods
 		void beSigned(Bureaucrat &signer);
-		virtual void execute(Bureaucrat const &executor) const = 0;
+		virtual int execute(Bureaucrat const &executor) const = 0;
 
 		//getters
 		const std::string getName() const;
@@ -59,6 +59,11 @@ class AForm
 		};
 
 		class GradeTooLowException : public std::exception
+		{
+			virtual const char *what() const throw();
+		};
+
+		class FormNotSignedException : public std::exception
 		{
 			virtual const char *what() const throw();
 		};
