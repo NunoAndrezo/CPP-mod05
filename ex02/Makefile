@@ -1,5 +1,5 @@
 #Name of the executable
-NAME = Form_up_maggots
+NAME = No_you_need_form_28B_not_28C
 
 #Compiler to use
 CC = c++
@@ -22,7 +22,7 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source and object files
-SRC_FILES = main.cpp Bureaucrat.cpp Form.cpp
+SRC_FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 11:24:18 by nuno              #+#    #+#             */
-/*   Updated: 2026/03/19 19:16:02 by nuno             ###   ########.fr       */
+/*   Updated: 2026/03/31 18:40:45 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ AForm::AForm(const int grade_sign, const int grade_execute): name("Default"), is
 
 AForm::AForm(const std::string name, const int grade_sign, const int grade_execute): name(name), is_signed(false), grade_sign(grade_sign), grade_execute(grade_execute)
 {
-	std::cout << "AForm Constructor called, has grade sign: " << getGrade_Sign() << ", grade execute: " << getGrade_Execute() << std::endl;
+	std::cout << "AForm Constructor called by " << name << ", needs grade to sign: " << getGrade_Sign() << ", grade to execute: " << getGrade_Execute() << std::endl;
 	if (grade_sign < 1 || grade_execute < 1)
 		throw GradeTooHighException();
 	else if (grade_sign > 150 || grade_execute > 150)
@@ -106,4 +106,10 @@ const char *AForm::GradeTooHighException::what() const throw()
 const char *AForm::GradeTooLowException::what() const throw()
 {
 	return ("AForm: Grade is too low!");
+}
+
+std::ostream &operator<<(std::ostream &out, AForm &src)
+{
+	std::cout << "Form has name: " << src.getName() << ". Is signed: " << src.getIsSigned() << ". Requires grade " << src.getGrade_Sign() << " to sign and grade " << src.getGrade_Execute() << " to execute." << std::endl;
+	return (out);
 }

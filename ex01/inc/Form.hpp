@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:30:54 by nuno              #+#    #+#             */
-/*   Updated: 2026/03/19 12:46:12 by nuno             ###   ########.fr       */
+/*   Updated: 2026/03/31 17:05:49 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,7 @@ class Form
 			virtual const char *what() const throw();
 		};
 };
+
+std::ostream &operator<<(std::ostream &out, Form &src);
 
 #endif

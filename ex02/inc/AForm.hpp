@@ -34,8 +34,10 @@ class AForm
 		AForm(const AForm &src);
 		AForm(const std::string name, const int grade_sign, const int grade_execute);
 		
+
 		//destructor
-		virtual ~AForm();
+		virtual ~AForm(); // virtual destructor to allow proper cleanup of derived classes
+		// Making this class abstract by declaring a pure virtual function (execute) ensures that it cannot be instantiated directly and must be inherited by derived classes that implement the execute method.
 
 		//operators overloads
 		AForm &operator=(const AForm &src);
@@ -61,5 +63,7 @@ class AForm
 			virtual const char *what() const throw();
 		};
 };
+
+std::ostream &operator<<(std::ostream &out, AForm &src);
 
 #endif

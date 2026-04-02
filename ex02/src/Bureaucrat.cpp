@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:57:23 by nuno              #+#    #+#             */
-/*   Updated: 2026/02/09 13:55:25 by nuno             ###   ########.fr       */
+/*   Updated: 2026/03/31 18:31:06 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	Bureaucrat::decrementGrade()
 		throw GradeTooHighException();
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
 	form.beSigned(*this);
 }
@@ -95,6 +95,6 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &out, Bureaucrat const &obj)
 {
-	out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << "." << std::endl;
+	out << obj.getName() << " [Bureaucrat] Grade: " << obj.getGrade() << "." << std::endl;
 	return out;
 }

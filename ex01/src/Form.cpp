@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 11:24:18 by nuno              #+#    #+#             */
-/*   Updated: 2026/03/19 12:43:14 by nuno             ###   ########.fr       */
+/*   Updated: 2026/03/31 17:18:33 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void Form::beSigned(Bureaucrat &signer)
 			this->is_signed = true;
 		}
 		else
-			std::cout << getName() <<": This Form was aready sign!" << std::endl;
+			std::cout << signer.getName() << " couldn't sign Form: [" << getName() << "] because this Form was aready sign!" << std::endl;
 	}
 	else
 		std::cout << signer.getName() << " couldn't sign Form: [" << getName() << "] because their grade is too low!" << std::endl;
@@ -88,4 +88,10 @@ const char *Form::GradeTooHighException::what() const throw()
 const char *Form::GradeTooLowException::what() const throw()
 {
 	return ("Form: Grade is too low!");
+}
+
+std::ostream &operator<<(std::ostream &out, Form &src)
+{
+	std::cout << "Form has name: " << src.getName() << ". Is signed: " << src.getIsSigned() << ". Requires grade " << src.getGrade_Sign() << " to sign and grade " << src.getGrade_Execute() << " to execute." << std::endl;
+	return (out);
 }
