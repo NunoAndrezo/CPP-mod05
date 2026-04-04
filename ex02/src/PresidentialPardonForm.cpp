@@ -18,7 +18,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &src
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "[PresidentialPardonForm] -> Desconstructor!\n";
+	std::cout << "[PresidentialPardonForm] -> Destructor!\n";
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &src)

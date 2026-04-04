@@ -6,7 +6,7 @@
 class RobotomyRequestForm : public AForm
 {
 	private:
-		const std::string _target;
+		std::string _target;
 	public:
 		//constructor
 		RobotomyRequestForm(void);
@@ -20,9 +20,9 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
 
 		//methods
-		void execute(Bureaucrat const &executor) const;
+		int execute(Bureaucrat const &executor) const;
 		//getter
-		const std::string getTarget() const;
+		std::string getTarget() const;
 
 };
 
