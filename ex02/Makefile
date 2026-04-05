@@ -22,7 +22,7 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source and object files
-SRC_FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRC_FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJ_FILES = $(SRC_FILES:.cpp=.o)
 

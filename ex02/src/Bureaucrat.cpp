@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:57:23 by nuno              #+#    #+#             */
-/*   Updated: 2026/04/02 15:18:57 by nuno             ###   ########.fr       */
+/*   Updated: 2026/04/05 13:38:05 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,6 @@ void Bureaucrat::executeForm(AForm const &form) const
 {
 	if (form.execute(*this) == 0)
 		std::cout << this->getName() << " executed " << form.getName() << std::endl;
-	else
+	else // could just add another exeception for execution failure, for example in srand/rand, but since the instructions don't specify it, I'll just print an error message. To remember good old C style error handling.
 		std::cerr << this->getName() << " couldn't execute " << form.getName() << " because of an error during execution." << std::endl;
 }

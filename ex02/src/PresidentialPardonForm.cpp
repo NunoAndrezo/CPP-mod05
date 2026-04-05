@@ -6,7 +6,7 @@ PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardon
 	std::cout << "[PresidentialPardonForm] -> Default constructor with no Arguments! (default_target)" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string target) : _target(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string target) : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
 	std::cout << "[PresidentialPardonForm] -> Default constructor with -target:" << getTarget() << std::endl;
 }
@@ -49,4 +49,5 @@ int PresidentialPardonForm::execute(Bureaucrat const &executor) const
 	else if (executor.getGrade() < 1)
 		throw AForm::GradeTooHighException(); // if the executor's grade is too high to execute the form, we throw an exception.
 	std::cout << "I inform you that: " << _target << ", has been pardoned by Zaphod Beeblebrox!" << std::endl;
+	return (0);
 }

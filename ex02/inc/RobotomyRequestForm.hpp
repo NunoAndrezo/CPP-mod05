@@ -2,6 +2,7 @@
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include <stdlib.h>
 
 class RobotomyRequestForm : public AForm
 {
@@ -19,11 +20,8 @@ class RobotomyRequestForm : public AForm
 		//operator overload
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
 
-		//methods
-		int execute(Bureaucrat const &executor) const;
 		//getter
 		std::string getTarget() const;
-
+		//methods
+		int execute(Bureaucrat const &executor) const;
 };
-
-std::ostream &operator<<(std::ostream &out, RobotomyRequestForm &src);
